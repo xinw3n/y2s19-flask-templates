@@ -1,1 +1,26 @@
 <!-- Put the HTML template for your page here! -->
+<!DOCTYPE html>
+<html>
+<head>
+	<title></title>
+	  <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+{% if opposite_day == True %}
+       <ul>
+            {% for food in fav %}
+            <li> {{food}} </li>
+            {% endfor %}
+        </ul>
+         
+{% else %}
+       <ul>
+            {% for food in least_fav %}
+            <li> {{food}} </li>
+            {% endfor %}
+        </ul>
+         
+{% endif %}
+
+</body>
+</html>
